@@ -9,6 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%String name=(String)request.getAttribute("name"); %>
+<%if(name!=null){ %>
+<h1>Changed By:::<%=name %></h1>
+<%} %>
 <%List<Student> students=(List)request.getAttribute("list"); %>
 
 <table border="2px">
@@ -34,7 +38,7 @@
 <td><%=student.getPassword() %></td>
 <td><%=student.getPhone() %></td>
 <td><a href="delete?id=<%=student.getId() %>">Delete</a></td>
-<td><a href="update">Update</a></td>
+<td><a href="update?id=<%=student.getId() %>">Update</a></td>
 </tr>
 <%} %>
 
